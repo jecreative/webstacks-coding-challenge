@@ -5,8 +5,6 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `Webstacks Coding Challenge`,
-    description: `A simple landing page built with Gatsby and Contentful as part of the Webstacks coding challenge.`,
     author: `Jordan Esguerra`,
     lang: "en",
   },

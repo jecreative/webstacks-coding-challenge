@@ -1,9 +1,11 @@
-import React from "react"
+import React, { useState } from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 
 import headerStyles from "../styles/header.module.scss"
+import menuIcon from "../images/bars-light.svg"
 
 const Header = () => {
+  const [mobileNav, setMobileNav] = useState(false)
   //  Query Data
   const data = useStaticQuery(graphql`
     query {
@@ -46,7 +48,39 @@ const Header = () => {
         />
       </Link>
       {/* Navigation */}
-      <nav>
+      <nav className={headerStyles.mainNav}>
+        <ul>
+          {navLinks.map(link => (
+            <li key={link.id}>
+              <Link
+                to="/"
+                className={
+                  link.__typename === "ContentfulCallToAction"
+                    ? headerStyles.nav_callToAction
+                    : ""
+                }
+              >
+                {link.__typename === "ContentfulCallToAction"
+                  ? `${link.name} >`
+                  : link.name}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
+      {/* Mobile Nav Toggle */}
+      <button
+        className={headerStyles.mobile_navToggle}
+        onClick={() => setMobileNav(!mobileNav)}
+      >
+        <img src={menuIcon} alt="menu icon" />
+      </button>
+      {/* Mobvile Nav */}
+      <nav
+        className={
+          mobileNav ? headerStyles.mobile_nav_active : headerStyles.mobile_nav
+        }
+      >
         <ul>
           {navLinks.map(link => (
             <li key={link.id}>

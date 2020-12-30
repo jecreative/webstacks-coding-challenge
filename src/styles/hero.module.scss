@@ -35,10 +35,13 @@
     padding: 8rem 10rem 0rem;
   }
   @media (max-width: 1024px) {
-    padding: 8rem 6rem 0rem 4rem;
+    padding: 8rem 6rem 0rem;
   }
-  @media (max-width: 500px) {
-    padding: 8rem 2rem 0rem 2rem;
+  @media (max-width: 700px) {
+    padding: 8rem 4rem 0rem;
+  }
+  @media (max-width: 700px) {
+    padding: 8rem 1.5rem 0rem;
   }
   h1 {
     font-size: 3rem;
@@ -49,9 +52,16 @@
     @media (max-width: 768px) {
       font-size: 2.4rem;
       font-weight: 700;
-      width: 400px;
       line-height: 55px;
       margin-bottom: 1.3rem;
+      width: 100%;
+    }
+    @media (max-width: 500px) {
+      font-size: 2.3rem;
+      font-weight: 700;
+      line-height: 50px;
+      margin-bottom: 1.3rem;
+      width: 100%;
     }
   }
 
