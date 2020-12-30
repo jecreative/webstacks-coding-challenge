@@ -4,7 +4,7 @@ import BackgroundImage from "gatsby-background-image"
 
 import Layout from "../components/layout"
 import Services from "../components/services"
-import styles from "../styles/hero02.module.scss"
+import styles from "../styles/hero.module.scss"
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
