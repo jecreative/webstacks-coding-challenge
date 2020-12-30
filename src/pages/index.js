@@ -1,6 +1,5 @@
 import React from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
-import Img from "gatsby-image"
 
 import Layout from "../components/layout"
 import Services from "../components/services"
@@ -62,7 +61,7 @@ const IndexPage = () => {
             {callToActions.map(cta => (
               <Link
                 key={cta.id}
-                to={`/${cta.slug}`}
+                to="/"
                 className={styles.hero_callToAction}
                 style={
                   cta.slug === "get-started"

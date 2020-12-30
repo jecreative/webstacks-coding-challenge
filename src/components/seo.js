@@ -22,8 +22,6 @@ const SEO = () => {
   const { title, description, author, lang } = data.site.siteMetadata
   const meta = []
 
-  console.log(data)
-
   return (
     <Helmet
       htmlAttributes={{
