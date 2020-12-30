@@ -4,7 +4,7 @@ import BackgroundImage from "gatsby-background-image"
 
 import Layout from "../components/layout"
 import Services from "../components/services"
-import styles from "../styles/hero.module.scss"
+import heroStyles from "../styles/hero.module.scss"
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
@@ -47,23 +47,23 @@ const IndexPage = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className={styles.hero} key={contentful_id}>
+      <section className={heroStyles.hero} key={contentful_id}>
         <BackgroundImage
           fluid={backgroundImage.fluid}
-          className={styles.hero_background}
+          className={heroStyles.hero_background}
         >
-          <div className={styles.hero_overlay}></div>
-          <div className={styles.hero_content}>
+          <div className={heroStyles.hero_overlay}></div>
+          <div className={heroStyles.hero_content}>
             <h2>{subheader}</h2>
             <h1>{header}</h1>
             <h3>{description}</h3>
             {/* Call To Actions */}
-            <div className={styles.hero_callToActions}>
+            <div className={heroStyles.hero_callToActions}>
               {callToActions.map(cta => (
                 <Link
                   key={cta.id}
                   to="/"
-                  className={styles.hero_callToAction}
+                  className={heroStyles.hero_callToAction}
                   style={
                     cta.slug === "get-started"
                       ? { backgroundColor: "#2885f6" }

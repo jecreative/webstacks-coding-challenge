@@ -2,7 +2,7 @@ import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
-import styles from "../styles/services.module.scss"
+import servicesStyles from "../styles/services.module.scss"
 
 const Services = () => {
   // Query Services Data
@@ -33,13 +33,13 @@ const Services = () => {
   const services = data.allContentfulService.edges.map(service => service)
 
   return (
-    <div className={styles.services}>
+    <div className={servicesStyles.services}>
       {services.map((service, index) => (
         // Service Card
-        <div key={index} className={styles.service_card}>
+        <div key={index} className={servicesStyles.service_card}>
           <Img
             fluid={service.node.image.fluid}
-            className={styles.service_img}
+            className={servicesStyles.service_img}
             style={{ position: "absolute" }}
           />
           <strong>{service.node.name}</strong>
