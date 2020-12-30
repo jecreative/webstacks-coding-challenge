@@ -10,6 +10,9 @@
   position: relative;
   background-position: right;
   background-repeat: no-repeat;
+  @media (max-width: 500px) {
+    padding-bottom: 3rem;
+  }
 }
 
 .hero_overlay {
@@ -24,13 +27,15 @@
     rgba(0, 0, 0, 0) 100%
   );
   z-index: 1;
+  @media (max-width: 500px) {
+    height: 100%;
+  }
 }
 
 .hero_content {
   position: relative;
   color: white;
   padding: 8rem 12rem 4rem 12rem;
-
   z-index: 2;
   display: flex;
   flex-direction: column;
