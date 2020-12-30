@@ -91,6 +91,7 @@ const Header = () => {
                     ? headerStyles.nav_callToAction
                     : ""
                 }
+                onClick={() => setMobileNav(!mobileNav)}
               >
                 {link.__typename === "ContentfulCallToAction"
                   ? `${link.name} >`
