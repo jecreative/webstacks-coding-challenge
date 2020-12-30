@@ -1,11 +1,14 @@
 # 🚀 Webstacks Coding Challenge
 
-## 🚀 To run the project in development:
+## Available Scripts
 
-1.  **Clone the repo**
+In the root project directory, you can run:
 
-2.  **Run**
-    npm install
+### `npm install`
 
-3.  **Run**
-    Gatsby develop
+Installs necessary dependencies.
+
+### `Gatsby start`
+
+Runs the app in the development mode.
+Open [http://localhost:8000](http://localhost:8000) to view it in the browser.
