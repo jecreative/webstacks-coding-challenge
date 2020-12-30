@@ -8,8 +8,9 @@
 .hero_background {
   height: 100vh;
   position: relative;
-  background-position: right;
+  background-position: 85%;
   background-repeat: no-repeat;
+
   @media (max-width: 500px) {
     height: 100%;
   }
