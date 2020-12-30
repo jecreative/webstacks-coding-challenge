@@ -1,25 +1,20 @@
 .header {
   width: 100%;
-  min-height: 120px;
+  min-height: 10vh;
   position: absolute;
-  top: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0rem 12rem;
   z-index: 100;
-
   @media (max-width: 1240px) {
-    padding: 0rem 10rem;
-  }
-  @media (max-width: 1024px) {
-    padding: 0rem 6rem;
-  }
-  @media (max-width: 700px) {
     padding: 0rem 4rem;
   }
-  @media (max-width: 700px) {
-    padding: 0rem 1.5rem;
+  @media (max-width: 950px) {
+    padding: 0rem 2rem;
+  }
+  @media (max-width: 500px) {
+    padding: 0rem 1rem;
   }
 }
 
@@ -29,7 +24,6 @@
   img {
     width: 100px;
     height: 100px;
-    z-index: 200;
   }
 }
 
@@ -51,20 +45,18 @@
     transition: 0.1s ease-in-out;
     opacity: 1;
   }
-
   .nav_callToAction {
     background-color: #2885f6;
     padding: 0.6rem 1.5rem;
     border-radius: 2px;
     color: white;
     text-decoration: none;
-    font-size: 13px;
+    font-size: 0.8rem;
     font-weight: 500;
     margin-left: 33px;
     letter-spacing: 0.03rem;
     opacity: 1;
   }
-
   a:hover,
   .nav_callToAction:hover {
     opacity: 0.6;
@@ -73,8 +65,8 @@
 
 // Mobile Nav Toggle
 .mobile_navToggle {
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
   background: transparent;
   opacity: 1;
   border: none;
@@ -87,6 +79,9 @@
   }
   &:hover {
     opacity: 0.6;
+  }
+  img {
+    object-fit: cover;
   }
   @media (min-width: 769px) {
     display: none;

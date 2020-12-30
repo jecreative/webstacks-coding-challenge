@@ -8,7 +8,7 @@ import Header from "./header"
 
 const Layout = ({ children }) => {
   return (
-    <>
+    <div style={{ position: "relative" }}>
       {/* Google Font */}
       <Helmet>
         <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -23,7 +23,7 @@ const Layout = ({ children }) => {
       />
       <Header />
       <main>{children}</main>
-    </>
+    </div>
   )
 }
 

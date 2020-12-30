@@ -1,7 +1,8 @@
 import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
 
-import styles from "../styles/service.module.scss"
+import styles from "../styles/services02.module.scss"
 
 const Services = () => {
   // Query Services Data
@@ -16,8 +17,10 @@ const Services = () => {
               description
             }
             image {
-              file {
-                url
+              fluid(quality: 100) {
+                src
+                srcSet
+                ...GatsbyContentfulFluid
               }
             }
           }
@@ -26,25 +29,22 @@ const Services = () => {
     }
   `)
 
-  // Destructure and Sort Data
+  // Destructure data
   const services = data.allContentfulService.edges.map(service => service)
 
   return (
     <div className={styles.services}>
       {services.map((service, index) => (
+        // Service Card
         <div key={index} className={styles.service_card}>
-          <div
+          <Img
+            fluid={service.node.image.fluid}
             className={styles.service_img}
-            style={{
-              backgroundImage: `url('https://${service.node.image.file.url}')`,
-              backgroundSize: "contain",
-              backgroundPosition: "right",
-              backgroundRepeat: "no-repeat",
-            }}
-          ></div>
+            style={{ position: "absolute" }}
+          />
           <strong>{service.node.name}</strong>
           <p>{service.node.description.description}</p>
-          <Link to="/">Learn More {">"}</Link>
+          <Link to="/">Learn More {String.fromCharCode(0x203a)}</Link>
         </div>
       ))}
     </div>

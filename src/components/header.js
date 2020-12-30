@@ -2,7 +2,8 @@ import React, { useState } from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 
 import headerStyles from "../styles/header.module.scss"
-import menuIcon from "../images/bars-light.svg"
+import openMenuIcon from "../images/bars-light.svg"
+import closeMenuIcon from "../images/times-light.svg"
 
 const Header = () => {
   const [mobileNav, setMobileNav] = useState(false)
@@ -61,7 +62,7 @@ const Header = () => {
                 }
               >
                 {link.__typename === "ContentfulCallToAction"
-                  ? `${link.name} >`
+                  ? `${link.name} ${String.fromCharCode(0x203a)}`
                   : link.name}
               </Link>
             </li>
@@ -73,7 +74,11 @@ const Header = () => {
         className={headerStyles.mobile_navToggle}
         onClick={() => setMobileNav(!mobileNav)}
       >
-        <img src={menuIcon} alt="menu icon" />
+        {mobileNav ? (
+          <img src={closeMenuIcon} alt="Close menu icon" />
+        ) : (
+          <img src={openMenuIcon} alt="Open menu icon" />
+        )}
       </button>
       {/* Mobvile Nav */}
       <nav
@@ -94,7 +99,7 @@ const Header = () => {
                 onClick={() => setMobileNav(!mobileNav)}
               >
                 {link.__typename === "ContentfulCallToAction"
-                  ? `${link.name} >`
+                  ? `${link.name} ${String.fromCharCode(0x203a)}`
                   : link.name}
               </Link>
             </li>
