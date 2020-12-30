@@ -19,12 +19,10 @@ const Header = () => {
               ... on ContentfulCallToAction {
                 id
                 name
-                slug
               }
               ... on ContentfulNavLink {
                 id
                 name
-                slug
               }
             }
           }
@@ -53,7 +51,7 @@ const Header = () => {
           {navLinks.map(link => (
             <li key={link.id}>
               <Link
-                to={link.slug}
+                to="/"
                 className={
                   link.__typename === "ContentfulCallToAction"
                     ? headerStyles.nav_callToAction

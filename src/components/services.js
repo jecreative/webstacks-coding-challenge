@@ -15,7 +15,6 @@ const Services = () => {
             description {
               description
             }
-            slug
             image {
               file {
                 url
@@ -45,7 +44,7 @@ const Services = () => {
           ></div>
           <strong>{service.node.name}</strong>
           <p>{service.node.description.description}</p>
-          <Link to={`/${service.node.slug}`}>Learn More {">"}</Link>
+          <Link to="/">Learn More {">"}</Link>
         </div>
       ))}
     </div>
