@@ -30,6 +30,11 @@ const Layout = ({ children }) => {
         <title>{title ? title : "Webstacks Coding Challenge"}</title>
         <meta name="description" content={description} />
         <meta name="author" content={author} />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet"
+        />
       </Helmet>
       {/* Header */}
       <SEO />
